@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import BillCollection from './BillCollection'
 import BillsCast from './YourCast'
 
-
-
 export default class BillsPage extends Component {
   state = {
     bills: []
