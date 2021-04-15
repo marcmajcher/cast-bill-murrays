@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BillCard from '../components/BillCard.js';
+import BillCard from './BillCard.js';
 
 export default class BillCollection extends Component {
   render() {
