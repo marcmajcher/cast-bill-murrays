@@ -33,12 +33,12 @@ const BillCard = ({ bill }) => {
           <span>
             <div className="ui center aligned segment basic">
               <button
-                className="ui mini red button"
+                className="ui mini blue button"
                 onClick={() =>
                   console.log('add code to connect event listener')
                 }
               >
-                x
+                FIRE
               </button>
             </div>
           </span>
