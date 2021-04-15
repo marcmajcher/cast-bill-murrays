@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BillCollection from './components/BillCollection'
 import BillsCast from '././components/YourCast'
-import "./App.css";
 
 class App extends Component {
   state = {
