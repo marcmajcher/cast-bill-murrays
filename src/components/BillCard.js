@@ -1,45 +1,41 @@
-import React from "react";
+import React from 'react';
 
-
-const BillCard = props => {
+const BillCard = ({ bill }) => {
   return (
     <div className="ui column">
       <div
         className="ui card"
-        key={props.bill.id}
-        onClick={() => console.log("add code to connect event listener")}
+        key={bill.id}
+        onClick={() => console.log('add code to connect event listener')}
       >
         <div className="image">
-          <img alt="oh no!" src={props.bill.photo} />
+          <img alt="oh no!" src={bill.photo} />
         </div>
         <div className="content">
-          <div className="header">
-            {props.bill.name}
-          </div>
+          <div className="header">{bill.name}</div>
           <div className="meta text-wrap">
-            <small>{props.bill.catchphrase}</small>
+            <small>{bill.catchphrase}</small>
           </div>
         </div>
         <div className="extra content">
           <span>
             <i className="icon heartbeat" />
-            {props.bill.health}
+            {bill.health}
           </span>
-
           <span>
             <i className="icon dollar" />
-            {props.bill.salary}
+            {bill.salary}
           </span>
           <span>
             <i className="icon star" />
-            {props.bill.rating}
+            {bill.rating}
           </span>
           <span>
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
                 onClick={() =>
-                  console.log("add code to connect event listener")
+                  console.log('add code to connect event listener')
                 }
               >
                 x

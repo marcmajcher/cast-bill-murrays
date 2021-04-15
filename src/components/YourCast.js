@@ -8,7 +8,7 @@ class YourCast extends Component {
         <div className="ui five column grid">
           <div className="row bill-cast-row">
             {/*...and here...*/}
-            Your Bill Murrays
+            Your Cast of Bill Murrays
           </div>
         </div>
       </div>
