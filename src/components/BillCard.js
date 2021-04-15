@@ -15,7 +15,6 @@ const BillCard = props => {
         <div className="content">
           <div className="header">
             {props.bill.name}
-            {/* <i className={billTypeClasses[props.bill.bill_class]} /> */}
           </div>
           <div className="meta text-wrap">
             <small>{props.bill.catchphrase}</small>
@@ -28,12 +27,12 @@ const BillCard = props => {
           </span>
 
           <span>
-            <i className="icon lightning" />
-            {props.bill.damage}
+            <i className="icon dollar" />
+            {props.bill.salary}
           </span>
           <span>
-            <i className="icon shield" />
-            {props.bill.armor}
+            <i className="icon star" />
+            {props.bill.rating}
           </span>
           <span>
             <div className="ui center aligned segment basic">
