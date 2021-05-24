@@ -21,7 +21,7 @@ As a user, I should be able to:
 - See profiles of all Bill Murrays rendered in `BillCollection`.
 - Add an individual Bill to the cast by clicking on it. The selected actor should render in the `YourCast` component. The instance of Bill Murray can be enlisted only **once**. The actor **does not** disappear from the `BillCollection`.
 - Release an actor from the cast by clicking on it. The actor disappears from the `YourCast` component.
-- Discharge a Bill Murray from their agency forever, by clicking the red button marked "x", which would delete the actor both from the backend and from the `YourCast` on the frontend.
+- Discharge a Bill Murray from their agency forever, by clicking the red button that says "FIRE", which would delete the actor both from the backend and from the `YourCast` on the frontend.
 
 ## Bonus Deliverables
 
