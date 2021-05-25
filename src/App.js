@@ -19,29 +19,19 @@ class App extends Component {
       .then((bills) => this.setState({ bills }));
   }
 
-  doFetch = (method, callback, body) => {
-    fetch(`${billUrl}/${bill.id}`, {
-      method,
-      headers,
-      body,
-    })
-      .then(callback)
-      .catch((err) => console.error(err));
-  };
-
   setBillCast = (bill, cast) => {
-    this.doFetch(
-      'PATCH',
-      () => {
+    fetch(`${billUrl}/${bill.id}`, {
+      method: 'PATCH',
+      headers,
+      body: JSON.stringify({ cast }),
+    })
+      .then(() => {
         const newBill = { ...bill, cast };
         this.setState({
-          bills: this.state.bills.map((b) =>
-            b === bill ? { ...bill, cast } : b
-          ),
+          bills: this.state.bills.map((b) => (b === bill ? newBill : b)),
         });
-      },
-      { cast }
-    );
+      })
+      .catch((err) => console.error(err));
   };
 
   castBill = (bill) => {
@@ -53,11 +43,16 @@ class App extends Component {
   };
 
   fireBill = (bill) => {
-    this.doFetch('DELETE', () =>
-      this.setState({
-        bills: [...this.state.bills.filter((b) => b !== bill)],
-      })
-    );
+    fetch(`${billUrl}/${bill.id}`, {
+      method: 'DELETE',
+      headers,
+    })
+      .then(() =>
+        this.setState({
+          bills: [...this.state.bills.filter((b) => b !== bill)],
+        })
+      )
+      .catch((err) => console.error(err));
   };
 
   render() {
