@@ -7,7 +7,8 @@
       "salary": 1000000,
       "rating": 8,
       "catchphrase": "I'm a nut, but not just a nut.",
-      "photo": "https://www.fillmurray.com/200/300"
+      "photo": "https://www.fillmurray.com/200/300",
+      "cast": false
     },
     {
       "id": 102,
@@ -16,7 +17,8 @@
       "salary": 100,
       "rating": 1,
       "catchphrase": "And I don't like to work. I only like working when I'm working.",
-      "photo": "https://www.fillmurray.com/300/200"
+      "photo": "https://www.fillmurray.com/300/200",
+      "cast": true
     },
     {
       "id": 103,
@@ -25,7 +27,8 @@
       "salary": 800000,
       "rating": 6,
       "catchphrase": "People say I'm difficult and sometimes that's a badge of honour.",
-      "photo": "https://www.fillmurray.com/200/250"
+      "photo": "https://www.fillmurray.com/200/250",
+      "cast": false
     },
     {
       "id": 104,

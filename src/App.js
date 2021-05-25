@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import BillCollection from './components/BillCollection';
 import BillsCast from '././components/YourCast';
 
-const billUrl = 'http://localhost:3000/bills';
+const billUrl = 'http://localhost:6001/bills';
+const headers = {
+  Accepts: 'application/json',
+  'Content-type': 'application/json',
+};
 
 class App extends Component {
   state = {
@@ -15,22 +19,45 @@ class App extends Component {
       .then((bills) => this.setState({ bills }));
   }
 
+  doFetch = (method, callback, body) => {
+    fetch(`${billUrl}/${bill.id}`, {
+      method,
+      headers,
+      body,
+    })
+      .then(callback)
+      .catch((err) => console.error(err));
+  };
+
+  setBillCast = (bill, cast) => {
+    this.doFetch(
+      'PATCH',
+      () => {
+        const newBill = { ...bill, cast };
+        this.setState({
+          bills: this.state.bills.map((b) =>
+            b === bill ? { ...bill, cast } : b
+          ),
+        });
+      },
+      { cast }
+    );
+  };
+
   castBill = (bill) => {
-    const newBill = { ...bill, cast: true };
-    this.setState({ bills: this.state.bills.map((b) => (b === bill ? newBill : b)) });
+    this.setBillCast(bill, true);
   };
 
   releaseBill = (bill) => {
-    // this.setState({
-    //   castBills: [...this.state.castBills.filter((b) => b !== bill)],
-    // });
+    this.setBillCast(bill, false);
   };
 
   fireBill = (bill) => {
-    // this.releaseBill(bill);
-    // this.setState({
-    //   bills: [...this.state.bills.filter((b) => b !== bill)],
-    // });
+    this.doFetch('DELETE', () =>
+      this.setState({
+        bills: [...this.state.bills.filter((b) => b !== bill)],
+      })
+    );
   };
 
   render() {
